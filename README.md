@@ -2,22 +2,41 @@
 
 Ce projet est un système de gestion de parking qui permet de gérer l'entrée, le paiement et la sortie des véhicules dans un parking.
 
-## Fonctionnalités
+## 1. Entités et Value Objects
 
-- **Émission de Ticket** : Génération d'un ticket à l'entrée du parking.
-- **Traitement de Paiement** : Gestion des paiements pour les places de parking.
-- **Libération de Place** : Gestion de la sortie des véhicules et libération des places de parking.
+### Entités
+- **ParkingLot** : Un parking unique identifiable par son ID.
+- **ParkingSpace** : Place de parking identifiable par une combinaison de lettre et numéro (ex. A1, B3).
+- **Ticket** : Ticket émis pour un stationnement, contenant les détails du véhicule, le prix, le statut de paiement, et l'emplacement.
 
-## Commandes
+### Value Objects
+- **Vehicle** : Détails du véhicule incluant le type et la plaque d'immatriculation. Pas d'identité propre dans le système.
+- **Price** : Coût associé à chaque type de véhicule pour le stationnement.
+- **PaymentRecord** : Enregistre les détails d'un paiement, incluant le montant et la date.
 
+## 2. Bounded Contexts
+
+- **Parking Management**
+  - Gestion des parkings, allocation des places, et suivi des espaces disponibles.
+- **Ticketing System**
+  - Gestion de l'émission, du paiement et de la validation des tickets.
+- **Payment Processing**
+  - Traitement des paiements et enregistrement des transactions.
+
+## 3. Acteurs, Commandes et Events
+
+### Acteurs
+- **Client** : Utilisateur qui engage des interactions pour obtenir et payer des tickets de parking.
+
+### Commandes
 - **IssueTicket** : Émission d'un ticket à l'entrée du parking.
 - **ProcessPayment** : Traitement du paiement pour la place de parking.
 
-## Événements
-
+### Events
 - **TicketIssued** : Émis quand un ticket est créé et une place est assignée.
 - **PaymentReceived** : Émis quand un paiement est effectué avec succès.
 - **SpaceFreed** : Émis quand un véhicule quitte le parking et la place devient disponible.
+
 
 ## Installation
 
