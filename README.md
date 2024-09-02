@@ -42,11 +42,11 @@ Ce projet est un système de gestion de parking qui permet de gérer l'entrée, 
 
 1. Clonez le dépôt :
     ```sh
-    git clone https://github.com/votre-utilisateur/votre-repo.git
+    git clone https://github.com/Maxime-Godefroy/Exam
     ```
 2. Accédez au répertoire du projet :
     ```sh
-    cd votre-repo
+    cd Exam
     ```
 3. Installez les dépendances :
     ```sh
